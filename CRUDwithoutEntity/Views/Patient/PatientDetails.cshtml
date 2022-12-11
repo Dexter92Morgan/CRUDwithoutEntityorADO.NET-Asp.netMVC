@@ -1,0 +1,58 @@
+﻿@model CRUDwithoutEntity.Models.PatientModelVeiw
+
+@{
+    ViewBag.Title = "PatientDetails";
+}
+
+<h2>PatientDetails</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           @Html.DisplayName("Patient Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Patient Number")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Patient Email")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodGroup)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "UpdatePatient","Patient", new { id = Model.Id },null) |
+    @Html.ActionLink("Back to List", "Index","Patient")
+</p>

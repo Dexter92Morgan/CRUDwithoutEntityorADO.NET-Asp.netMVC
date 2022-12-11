@@ -1,0 +1,58 @@
+﻿@model IEnumerable<CRUDwithoutEntity.Models.PatientModelVeiw>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Patients List</h2>
+<br />
+<p>
+    @Html.ActionLink("Create New", "CreatePatient","Patient")
+</p>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Patient Name")
+        </th>
+        <th>
+            @Html.DisplayName("Patient Number")
+        </th>
+        <th>
+            @Html.DisplayName("Patient Email")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodGroup)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodGroup)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UpdatePatient", "Patient", new { id=item.Id }, null) |
+            @Html.ActionLink("Show Details", "PatientDetails", "Patient", new { id=item.Id }, null) |
+            @Html.ActionLink("Delete", "DeletePatient", "Patient", new { id=item.Id }, null)
+        </td>
+    </tr>
+}
+
+</table>
